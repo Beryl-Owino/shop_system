@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Business Dashboard</h1>
+
+<!-- SUMMARY CARDS -->
+<div style="display: flex; gap: 20px; flex-wrap: wrap">
+  <div class="card">
+    <h3>Total Sales</h3>
+    <p>KES {{ sales }}</p>
+  </div>
+
+  <div class="card">
+    <h3>M-Pesa Income</h3>
+    <p>KES {{ mpesa }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Total Revenue</h3>
+    <p>KES {{ total }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Income Gap</h3>
+    <p>KES {{ gap }}</p>
+  </div>
+</div>
+
+<!-- SALES CHART SECTION -->
+<h2 style="margin-top: 30px">Sales Trend</h2>
+
+<div
+  style="
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  "
+>
+  <img
+    src="data:image/png;base64,{{ graph }}"
+    style="width: 100%; max-height: 400px"
+  />
+</div>
+
+<hr />
+
+<!-- NAVIGATION MENU -->
+<h2>System Navigation</h2>
+
+<div style="display: flex; flex-wrap: wrap; gap: 15px">
+  <a class="nav-btn" href="/report">Sales Report</a>
+  <a class="nav-btn" href="/daily">Daily Summary</a>
+  <a class="nav-btn" href="/insights">Insights</a>
+  <a class="nav-btn" href="/gap">Gap Analysis</a>
+  <a class="nav-btn" href="/chart">Charts</a>
+  <a class="nav-btn" href="/add">Add Sale</a>
+  <a class="nav-btn" href="/upload">Upload MPesa</a>
+</div>
+
+{% endblock %}

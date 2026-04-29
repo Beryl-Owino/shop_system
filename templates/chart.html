@@ -1,0 +1,10 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Sales Chart</h2>
+
+<img src="data:image/png;base64,{{ graph }}" style="max-width: 100%" />
+
+<div class="spacing">
+  <a href="/" class="nav-btn">⬅ Back Home</a>
+</div>
+{% endblock %}

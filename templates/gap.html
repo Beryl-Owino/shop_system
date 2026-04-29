@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block content %}
+<h1>Income Gap Analysis</h1>
+
+<div class="card">
+  <h3>Total Sales</h3>
+  <p>KES {{ sales }}</p>
+</div>
+
+<div class="card">
+  <h3>M-Pesa</h3>
+  <p>KES {{ mpesa }}</p>
+</div>
+
+<div class="card">
+  <h3>Gap</h3>
+  <p>KES {{ gap }}</p>
+</div>
+<div class="spacing">
+  <a href="/" class="nav-btn">⬅ Back Home</a>
+</div>
+{% endblock %}

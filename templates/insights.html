@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Smart Insights</h2>
+
+<div class="card">
+  <h3>Total Profit</h3>
+  <p>KES {{ total_profit }}</p>
+</div>
+
+<div class="card">
+  <h3>Best Item</h3>
+  <p>{{ best_item }}</p>
+</div>
+
+<div class="card">
+  <h3>Worst Item</h3>
+  <p>{{ worst_item }}</p>
+</div>
+
+<div class="card">
+  <h3>Best Day</h3>
+  <p>{{ best_day }}</p>
+</div>
+
+<div class="card">
+  <h3>Worst Day</h3>
+  <p>{{ worst_day }}</p>
+</div>
+
+<div style="margin-top: 30px">
+  <a href="/" class="nav-btn">⬅ Back Home</a>
+</div>
+
+{% endblock %}

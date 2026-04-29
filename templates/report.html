@@ -1,0 +1,85 @@
+{% extends "base.html" %} {% block content %}
+
+<h2>Sales Report</h2>
+
+<!-- SUMMARY CARDS -->
+<div style="display: flex; gap: 20px; flex-wrap: wrap">
+  <div class="card">
+    <h3>Total Revenue</h3>
+    <p>KES {{ total_revenue }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Total Cost</h3>
+    <p>KES {{ total_cost }}</p>
+  </div>
+
+  <div class="card">
+    <h3>Total Profit</h3>
+    <p>KES {{ total_profit }}</p>
+  </div>
+</div>
+
+<!-- FILTER + SEARCH -->
+<form
+  method="GET"
+  style="
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  "
+>
+  <input type="text" name="search" placeholder="Search item..." />
+
+  <input type="date" name="date" />
+
+  <button type="submit" style="padding: 8px 15px; cursor: pointer">
+    Apply Filters
+  </button>
+</form>
+
+<!-- TABLE -->
+<table>
+  <tr>
+    <th>Item</th>
+    <th>Variant</th>
+    <th>Qty</th>
+    <th>Revenue</th>
+    <th>Cost</th>
+    <th>Profit</th>
+    <th>Date</th>
+    <th>Actions</th>
+  </tr>
+
+  {% for row in data %}
+  <tr>
+    <td>{{ row.item }}</td>
+    <td>{{ row.variant }}</td>
+    <td>{{ row.qty }}</td>
+    <td>{{ row.revenue }}</td>
+    <td>{{ row.cost }}</td>
+    <td>{{ row.profit }}</td>
+    <td>{{ row.date }}</td>
+    <td>
+      <a
+        href="/delete/{{ row.id }}"
+        onclick="return confirm('Delete this record?');"
+      >
+        🗑 Delete
+      </a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<!-- BACK BUTTON -->
+<div style="margin-top: 20px">
+  <a href="/" class="nav-btn">⬅ Back Home</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Daily Sales Summary</h1>
+
+<table>
+  <tr>
+    <th>Date</th>
+    <th>Revenue (KES)</th>
+  </tr>
+
+  {% for day, total in data.items() %}
+  <tr>
+    <td>{{ day }}</td>
+    <td>KES {{ total }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<br />
+<a href="/" class="nav-btn">⬅ Back Home</a>
+
+{% endblock %}

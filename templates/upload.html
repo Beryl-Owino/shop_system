@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Upload M-Pesa Excel</h1>
+
+<form method="POST" enctype="multipart/form-data" class="card">
+  <input type="file" name="file" required />
+  <br /><br />
+  <button type="submit" class="nav-btn">Upload File</button>
+</form>
+
+<div class="back">
+  <a href="/" class="nav-btn">⬅ Back Home</a>
+</div>
+
+{% endblock %}
